@@ -1,136 +1,38 @@
-# Создаем директорию
-mkdir git_project
+# Проект Магазин электроники
 
-# Инициализируем репозиторий
-cd git_project
-git init
+## Домашние задания по Python ООП
 
-# Копируем .gitignore
-wget https://raw.githubusercontent.com/bard/git-example/main/.gitignore
+Добро пожаловать в репозиторий с домашними заданиями по курсу «ООП». 
+К концу курса здесь будет шесть заданий: по одному заданию на урок. 
+В этих заданиях вы реализуете классы для представления товаров в магазине электроники.
 
-# Делаем коммит
-git add .gitignore
-git commit -m "Добавили .gitignore"
+Каждое домашнее задание находится в своей директории с названием _homework-N_, где _N_ - номер домашнего задания. 
 
-# Создаем директорию src/
-mkdir src
+### Особенности проекта
+- управление зависимостями через poetry (venv - если проблемы с установкой poetry)
+- тестирование через pytest
+- покрытие тестами должно быть не менее 50%
 
-# Создаем файл main.py в src/
-touch src/main.py
 
-# Создаем директорию tests/
-mkdir tests
+### Как сдавать домашние задания
 
-# Создаем файл test_basic.py в tests/
-touch tests/test_basic.py
+#### Необходимо выполнить один раз:
 
-# Делаем коммит с добавлением main.py
-git add src/main.py
-git commit -m "Добавили main.py"
+1. Сделайте __Fork__ этого репозитория. Репозиторий появится в ваших личных репозиториях на GitHub.
+2. Сделайте `git clone` форкнутого репозитория, чтобы получить репозиторий локально.
 
-# Делаем коммит с добавлением test_basic.py
-git add tests/test_basic.py
-git commit -m "Добавили test_basic.py"
+#### Для каждой домашней работы:
 
-# Создаем ssh-ключ
-ssh-keygen -t rsa -b 4096
+1. Выполните домашнее задание локально на компьютере.
+2. Выполните `git push`. Решение ДЗ появится в вашем репозитории на GitHub.
+3. Отправьте ссылку на репозиторий проверяющему.
 
-# Копируем ssh-ключ на GitHub
-cat ~/.ssh/id_rsa.pub | pbcopy
+#### Как сделать Fork репозитория на GitHub
 
-# Создаем репозиторий на GitHub
-git clone git@github.com:bard/git-example.git
+1. Откройте репозиторий, который вы хотите форкнуть.
+2. Нажмите на кнопку "Fork" в правом верхнем углу страницы.
+3. Выберите свой профиль или организацию в качестве места, куда вы хотите форкнуть репозиторий.
+4. Дождитесь, пока GitHub завершит процесс форкинга.
+5. Теперь вы можете клонировать свой форкнутый репозиторий на свой компьютер, чтобы начать работать с ним.
 
-# Привязываем репозиторий
-git remote add origin git@github.com:bard/git-example.git
-
-# Запушиваем изменения
-git push origin master
-# Создаем файл README.md на GitHub
-echo "Это README.md" > README.md
-git add README.md
-git commit -m "Добавили README.md"
-git push origin master
-
-# Обновляем локальный репозиторий
-git pull origin master
-# Добавляем код в main.py
-echo "print('Hello World')" >> src/main.py
-
-# Делаем коммит
-git add src/main.py
-git commit -m "Добавили Hello World"
-
-# Отменяем последний коммит
-git reset --hard HEAD~1
-
-# Изменяем Hello World на Hello Linux
-echo "print('Hello Linux')" >> src/main.py
-
-# Делаем коммит
-git add src/main.py
-git commit -m "Изменили Hello World на Hello Linux"
-
-# Отменяем коммит с добавлением Hello World
-git revert HEAD~1
-
-# Запушиваем изменения
-git push origin master
-# Создаем новый проект
-File > New Project > Python Project
-
-# Создаем файл .gitignore
-File > Settings > Version Control > Git > Ignored Files
-
-# Добавляем в .gitignore
-/venv/
-.idea/
-
-# Создаем файл funcs.py
-File > New > File
-
-# Пишем код в funcs.py
-def add(a, b):
-    return a + b
-
-# Подключаем Git
-Tools > Version Control > Git
-
-# Делаем коммит
-Commit
-
-# Добавляем вторую функцию
-def sub(a, b):
-    return a - b
-
-# Добавляем в funcs.py
-def sub(a, b):
-    return a - b
-
-# Делаем коммит
-Commit
-
-# Создаем файл main.py
-File > New > File
-
-# Добавляем в main.py
-import funcs
-
-print(funcs.add(1, 2))
-
-# Добавляем main.py в отслеживаемые файлы
-File > Settings > Version Control > Git > Untracked Files
-
-# Делаем коммит
-Commit
-
-# Добавляем вызов функции sub в main.py
-print(funcs.sub(3, 2))
-
-# Делаем коммит
-Commit
-
-# Просматриваем историю изменений
-Git > History
-# Добавляем SSH-ключ в GitHub
-File > Settings > Version Control > GitHub
+Успехов в изучении ООП!
